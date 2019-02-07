@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  name: MyString
+  room_id: 1
+  make: MyString
+  model: MyString
+  upc: MyString
+  purchase_date: 2019-01-30
+  serial_num: MyString
+  purchase_price: 1.5
+
+two:
+  user_id: 1
+  name: MyString
+  room_id: 1
+  make: MyString
+  model: MyString
+  upc: MyString
+  purchase_date: 2019-01-30
+  serial_num: MyString
+  purchase_price: 1.5

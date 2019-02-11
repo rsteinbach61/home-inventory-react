@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def new
-    @home = Home.new(params)
+    @home = Home.new(home_params)
   end
 
   def create
@@ -16,5 +16,10 @@ class HomeController < ApplicationController
 @home.save
 render json:@home
   end
+
+ private
+   def home_params
+     params.require(:home).permit(:name, :user_id, :room_id)
+   end
 
 end

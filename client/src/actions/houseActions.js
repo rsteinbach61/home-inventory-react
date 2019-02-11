@@ -34,6 +34,7 @@ async function postHome(data){
   const response = await fetchResult;
   const jsonData = await response.json();
   return jsonData;
+
 }
 
 
@@ -51,7 +52,11 @@ export function addHome(data) {
   return function(dispatch) {
     return postHome(data).then(home =>{
       debugger;
+        if (home.status === 200){
       dispatch(postHomeSuccess(home))
+    } else {
+      alert(home.error)
+    }
     })
   }
 }

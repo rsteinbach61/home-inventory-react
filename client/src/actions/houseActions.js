@@ -51,11 +51,10 @@ export function addHome(data) {
   debugger;
   return function(dispatch) {
     return postHome(data).then(home =>{
-      debugger;
-        if (home.status === 200){
-      dispatch(postHomeSuccess(home))
+      if (home.status){
+          alert(`Status: ${home.status}, ${home.error}`)
     } else {
-      alert(home.error)
+      dispatch(postHomeSuccess(home))
     }
     })
   }

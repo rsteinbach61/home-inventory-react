@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
   def create
 #binding.pry
-@home = Home.new(name: home_params[:text])
+@home = Home.new(name: params[:text])
 @home.save
 render json:@home
   end

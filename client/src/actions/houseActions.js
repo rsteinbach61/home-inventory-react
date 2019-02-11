@@ -42,7 +42,11 @@ async function postHome(data){
 export function loadHouses() {
   return function(dispatch) {
     return fetchHomes().then(homes => {
+      if (homes.status){
+          alert(`Status: ${homes.status}, ${homes.error}`)
+    } else {
       dispatch(loadHomesSuccess(homes))
+    }
     })
   }
 }

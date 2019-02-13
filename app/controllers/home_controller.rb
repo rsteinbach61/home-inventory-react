@@ -11,10 +11,15 @@ class HomeController < ApplicationController
   end
 
   def create
-#binding.pry
+binding.pry
 @home = Home.new(name: params[:text])
 @home.save
 render json:@home
+  end
+
+  def delete
+    @home = Home.find_by(id: params[:_json])
+    @home.destroy
   end
 
  private

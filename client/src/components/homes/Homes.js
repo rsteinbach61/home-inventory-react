@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-
+import Home from './Home'
 class Homes extends Component {
 
-
+  // handleOnClick(id){
+  //   debugger;
+  //     this.props.deleteHome(id)
+  //   }
 
   render() {
-    debugger;
-    const {houses} = this.props;
+    const {houses, deleteHome} = this.props;
     const list = houses.map(house => {
       return(
-        <li key={house.id}> {house.name} </li>
+        <Home key={houses.id}
+          home={house}
+          deleteHome={deleteHome}/>
       )
     })
-debugger;
     return(
       <div> Homes
         <ul>

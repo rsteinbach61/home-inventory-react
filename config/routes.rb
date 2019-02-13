@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   scope '/api/' do
     get :home, to: 'home#index'
     post :create, to: 'home#create'
+    post :delete, to: 'home#delete'
   end
 end

@@ -1,12 +1,15 @@
 
 
 export function loadHomesSuccess(houses){
-  debugger;
   return {type: "GET_HOUSES_SUCCESS", houses}
 }
 
 export function postHomeSuccess(home){
   return {type: "POST_HOME_SUCCESS", home}
+}
+
+export function removeHomeSuccess(home){
+  return {type: "REMOVE_HOME_SUCCESS", home}
 }
 
 
@@ -37,6 +40,24 @@ async function postHome(data){
 
 }
 
+async function deleteHome(data){
+  const url = '/api/delete.json';
+  const settings = {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+}
+    const fetchResult = fetch(url, settings);
+    const response = await fetchResult;
+    const jsonData = await response.json();
+    return jsonData;
+
+
+}
+
 
 
 export function loadHouses() {
@@ -52,7 +73,6 @@ export function loadHouses() {
 }
 
 export function addHome(data) {
-  debugger;
   return function(dispatch) {
     return postHome(data).then(home =>{
       if (home.status){
@@ -60,6 +80,15 @@ export function addHome(data) {
     } else {
       dispatch(postHomeSuccess(home))
     }
+    })
+  }
+}
+
+export function removeHome(data){
+  debugger;
+  return function(dispatch) {
+    return deleteHome(data).then(home =>{
+      dispatch(removeHomeSuccess)
     })
   }
 }

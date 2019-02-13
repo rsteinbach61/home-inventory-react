@@ -3,7 +3,7 @@ import Homes from '../components/homes/Homes';
 import HomeInput from '../components/homes/HomeInput'
 import { connect } from 'react-redux';
 import { addHome} from '../actions/houseActions';
-
+import {removeHome} from '../actions/houseActions';
 
 
 
@@ -15,7 +15,7 @@ class HomesContainer extends Component {
 debugger;
     return(
       <div>
-      <Homes houses={this.props.houses}/>
+      <Homes houses={this.props.houses} deleteHome={this.props.removeHome}/>
       <HomeInput addHome={this.props.addHome} />
       </div>
     )
@@ -23,9 +23,5 @@ debugger;
 }
 const mapStateToProps = state => ({houses: state.houses})
 
-//const mapDispatchToProps = dispatch => ({
-  //addHome: text =>
-  //dispatch({type: 'ADD_HOME', text})
-//})
 
-export default connect(mapStateToProps, {addHome}) (HomesContainer)
+export default connect(mapStateToProps, {removeHome, addHome}) (HomesContainer)

@@ -12,7 +12,6 @@ class HomesContainer extends Component {
 
   render(){
 
-debugger;
     return(
       <div>
       <Homes houses={this.props.houses} deleteHome={this.props.removeHome}/>

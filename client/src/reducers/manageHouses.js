@@ -7,7 +7,6 @@ const initialState = {
 
 
 export default function manageHouses(state = {initialState}, action) {
-  debugger;
   switch (action.type) {
     case GET_HOUSES_SUCCESS:
 
@@ -15,7 +14,6 @@ export default function manageHouses(state = {initialState}, action) {
 
 
     case POST_HOME_SUCCESS:
-    debugger;
     return{
       ...state,
       houses:[
@@ -23,11 +21,10 @@ export default function manageHouses(state = {initialState}, action) {
     ]}
 
     case REMOVE_HOME_SUCCESS:
-    debugger;
     return{
       ...state,
       houses: action.homes
-      
+
     }
 
     default: return initialState;

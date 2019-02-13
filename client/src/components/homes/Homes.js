@@ -11,7 +11,7 @@ class Homes extends Component {
     const {houses, deleteHome} = this.props;
     const list = houses.map(house => {
       return(
-        <Home key={houses.id}
+        <Home key={house.id}
           home={house}
           deleteHome={deleteHome}/>
       )

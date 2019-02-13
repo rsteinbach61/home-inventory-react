@@ -3,13 +3,11 @@ import React, { Component } from 'react';
 class Home extends Component {
 
   handleOnClick(id){
-    debugger;
       this.props.deleteHome(id)
     }
 
   render(){
     const {home} = this.props;
-    debugger;
     return(
       <div>
       <li>

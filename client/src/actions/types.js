@@ -3,3 +3,5 @@ export const GET_HOUSES_SUCCESS = 'GET_HOUSES_SUCCESS';
 //export const ADD_HOME = 'ADD_HOME';
 
 export const POST_HOME_SUCCESS = "POST_HOME_SUCCESS";
+
+export const REMOVE_HOME_SUCCESS = "REMOVE_HOME_SUCCESS";

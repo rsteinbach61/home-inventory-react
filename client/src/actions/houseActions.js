@@ -8,8 +8,8 @@ export function postHomeSuccess(home){
   return {type: "POST_HOME_SUCCESS", home}
 }
 
-export function removeHomeSuccess(home){
-  return {type: "REMOVE_HOME_SUCCESS", home}
+export function removeHomeSuccess(homes){
+  return {type: "REMOVE_HOME_SUCCESS", homes}
 }
 
 
@@ -32,7 +32,7 @@ async function postHome(data){
     },
     body: JSON.stringify(data)
   }
-
+debugger;
   const fetchResult = fetch(url, settings);
   const response = await fetchResult;
   const jsonData = await response.json();
@@ -73,6 +73,7 @@ export function loadHouses() {
 }
 
 export function addHome(data) {
+  debugger;
   return function(dispatch) {
     return postHome(data).then(home =>{
       if (home.status){
@@ -87,8 +88,8 @@ export function addHome(data) {
 export function removeHome(data){
   debugger;
   return function(dispatch) {
-    return deleteHome(data).then(home =>{
-      dispatch(removeHomeSuccess)
+    return deleteHome(data).then(homes =>{
+      dispatch(removeHomeSuccess(homes))
     })
   }
 }

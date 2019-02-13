@@ -1,4 +1,4 @@
-import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS } from '../actions/types'
+import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS } from '../actions/types'
 
 const initialState = {
   houses: [],
@@ -21,6 +21,14 @@ export default function manageHouses(state = {initialState}, action) {
       houses:[
       ...state.houses, action.home
     ]}
+
+    case REMOVE_HOME_SUCCESS:
+    debugger;
+    return{
+      ...state,
+      houses: action.homes
+      
+    }
 
     default: return initialState;
 

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     get :home, to: 'home#index'
     post :create, to: 'home#create'
     post :delete, to: 'home#delete'
+    post :createroom, to: 'room#create'
   end
 end

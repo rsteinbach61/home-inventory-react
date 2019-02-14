@@ -25,7 +25,7 @@ class HomeInput extends Component {
 
   render() {
     return (
-      <div>
+      <div>Add Home
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="homename" onChange={(event) =>
           this.handleChange(event)} value={this.state.text}/>

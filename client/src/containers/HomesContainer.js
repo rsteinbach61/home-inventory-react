@@ -22,7 +22,7 @@ class HomesContainer extends Component {
     )
   }
 }
-const mapStateToProps = state => ({houses: state.houses})
+const mapStateToProps = state => ({houses: state.homes.houses})
 
 
 export default connect(mapStateToProps, {removeHome, addHome, addRoom}) (HomesContainer)

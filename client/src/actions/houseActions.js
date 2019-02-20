@@ -23,6 +23,7 @@ async function fetchHomes() {
 }
 
 async function postHome(data){
+  debugger;
   const url = '/api/create.json';
   const settings = {
     method: 'POST',

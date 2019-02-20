@@ -12,9 +12,9 @@ class HomeController < ApplicationController
 
   def create
 
-@home = Home.new(name: params[:text])
-@home.save
-render json:@home
+    @home = Home.new(name: params[:homename])
+    @home.save
+    render json:@home
   end
 
   def delete

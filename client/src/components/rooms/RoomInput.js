@@ -6,21 +6,21 @@ class RoomInput extends Component {
   constructor() {
     super();
     this.state = {
-      text: '',
+      roomname: '',
     };
   }
 
   handleChange(event) {
-
-    this.setState({
-      text: event.target.value
-    })
+    let state = this.state
+    let field = event.target.name
+    state[field] = event.target.value
+    this.setState(state)
   }
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.addRoom(this.state)
-    this.setState({text: ''})
+    this.setState({roomname: ''})
   }
 
   render() {
@@ -28,7 +28,7 @@ class RoomInput extends Component {
       <div>Add Room
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="roomname" onChange={(event) =>
-          this.handleChange(event)} value={this.state.text}/>
+          this.handleChange(event)} value={this.state.roomname}/>
           <input type="submit" />
           </form>
 

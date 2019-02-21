@@ -7,7 +7,7 @@ const initialState = {
 
 
 export default function manageHouses(state = {initialState}, action) {
-  debugger;
+
   switch (action.type) {
     case GET_HOUSES_SUCCESS:
 

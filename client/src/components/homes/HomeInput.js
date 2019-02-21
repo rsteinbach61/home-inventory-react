@@ -14,13 +14,11 @@ class HomeInput extends Component {
     let state = this.state
     let field = event.target.name
     state[field] = event.target.value
-
     this.setState(state)
   }
 
   handleSubmit = event => {
     event.preventDefault();
-
     this.props.addHome(this.state)
     this.setState({ homename: ''})
   }

@@ -3,7 +3,7 @@ class RoomController < ApplicationController
 
 
   def create
-    @room = Room.new(name: params[:text])
+    @room = Room.new(name: params[:roomname])
     @room.save
     render json:@room
   end

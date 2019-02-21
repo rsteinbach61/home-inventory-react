@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export default function manageRooms(state = {initialState}, action) {
-  debugger;
+
   switch (action.type) {
     case POST_ROOM_SUCCESS:
 

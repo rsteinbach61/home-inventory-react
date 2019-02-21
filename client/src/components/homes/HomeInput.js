@@ -30,7 +30,7 @@ class HomeInput extends Component {
       <div>Add Home
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="homename" onChange={(event) =>
-          this.handleChange(event)} value={this.state.text}/>
+          this.handleChange(event)} value={this.state.homename}/>
           <input type="submit" />
           </form>
 

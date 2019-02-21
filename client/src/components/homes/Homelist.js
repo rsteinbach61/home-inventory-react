@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
+class Homelist extends Component {
 
   handleOnClick(id){
       this.props.deleteHome(id)
@@ -19,4 +19,4 @@ class Home extends Component {
     )
   }
 }
-export default Home;
+export default Homelist;

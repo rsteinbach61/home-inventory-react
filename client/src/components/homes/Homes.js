@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Home from './Home'
+import Homelist from './Homelist'
 class Homes extends Component {
 
 
@@ -8,7 +8,7 @@ class Homes extends Component {
     const {houses, deleteHome} = this.props;
     const list = houses.map(house => {
       return(
-        <Home key={house.id}
+        <Homelist key={house.id}
           home={house}
           deleteHome={deleteHome}/>
       )

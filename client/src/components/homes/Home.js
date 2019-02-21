@@ -12,6 +12,7 @@ class Home extends Component {
       <div>
       <li>
         {home.name}
+        {home.id}
         <button onClick={() => this.handleOnClick(home.id)}> X </button>
       </li>
       </div>

@@ -8,17 +8,14 @@ class Homelist extends Component {
 
   render(){
     const {home} = this.props;
-    debugger;
     return(
       <div>
-      <li>
-
-      <NavLink to={`/home/${home.id}`}>
-        {home.name}
-        {home.id}
-        </NavLink>
-        <button onClick={() => this.handleOnClick(home.id)}> X </button>
-      </li>
+        <li>
+          <NavLink to={`/home/${home.id}`}>
+            {home.name}
+          </NavLink>
+          <button onClick={() => this.handleOnClick(home.id)}> X </button>
+        </li>
       </div>
     )
   }

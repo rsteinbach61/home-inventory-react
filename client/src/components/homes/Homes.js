@@ -14,7 +14,8 @@ class Homes extends Component {
       )
     })
     return(
-      <div> Homes
+      <div>
+        <h1>Homes</h1>
         <ul>
         {list}
         </ul>

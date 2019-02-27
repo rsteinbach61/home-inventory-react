@@ -16,7 +16,7 @@ class Home extends Component {
       <div>
         <h3>Home Page For:</h3>
         {house[0].name}
-        <Rooms getRoom={this.props.getRoom}/>
+        <Rooms getRoom={this.props.getRoom} house={house[0]}/>
       </div>
     )
   }

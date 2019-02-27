@@ -13,7 +13,7 @@ class RoomController < ApplicationController
   end
 
   def index
-    
+    binding.pry
     @rooms = Room.all
     render json:@rooms
   end

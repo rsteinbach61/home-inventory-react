@@ -2,6 +2,7 @@ require 'pry'
 class HomeController < ApplicationController
 
   def index
+
     @homes = Home.all
     render json: @homes
   end
@@ -22,6 +23,13 @@ class HomeController < ApplicationController
     @home.destroy
     @homes = Home.all
     render json: @homes
+  end
+
+  def rooms
+    @house = Home.find_by(:id => params[:id])
+    @rooms = @house.rooms
+    render json: @house
+
   end
 
  private

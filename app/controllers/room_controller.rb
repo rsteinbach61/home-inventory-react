@@ -3,6 +3,7 @@ class RoomController < ApplicationController
 
 
   def create
+    binding.pry
     @room = Room.new(name: params[:roomname])
     @room.save
     render json:@room
@@ -12,6 +13,7 @@ class RoomController < ApplicationController
   end
 
   def index
+    
     @rooms = Room.all
     render json:@rooms
   end

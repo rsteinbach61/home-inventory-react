@@ -7,6 +7,7 @@ class RoomInput extends Component {
     super();
     this.state = {
       roomname: '',
+      houseId: null,
     };
   }
 
@@ -14,6 +15,7 @@ class RoomInput extends Component {
     let state = this.state
     let field = event.target.name
     state[field] = event.target.value
+    state.houseId = this.props.houseId
     this.setState(state)
   }
 

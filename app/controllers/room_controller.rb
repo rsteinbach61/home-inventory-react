@@ -1,11 +1,14 @@
 require 'pry'
 class RoomController < ApplicationController
-
+  def new
+    @room = Room.new(room_params)
+  end
 
   def create
 
-    @room = Room.new(name: params[:roomname])
-    @room.save
+    @room = Room.create(name: params[:roomname], home_id: params[:houseId])
+    #@room = Room.new(name: params[:roomname])
+    #@room.save
     render json:@room
   end
 
@@ -21,6 +24,9 @@ class RoomController < ApplicationController
   def edit
   end
 
-
+  private
+    def room_params
+      params.require(:room).permit(:name, :user_id, :home_id)
+    end
 
 end

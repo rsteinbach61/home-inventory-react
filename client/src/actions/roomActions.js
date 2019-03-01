@@ -31,6 +31,7 @@ async function getRooms(id){
 }
 
 export function addRoom(data) {
+  debugger;
   return function(dispatch) {
     return postRoom(data).then(room =>{
       if (room.status){

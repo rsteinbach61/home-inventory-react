@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Homes from '../components/homes/Homes';
 import HomeInput from '../components/homes/HomeInput'
-import RoomInput from '../components/rooms/RoomInput'
+
 import { connect } from 'react-redux';
 import { addHome} from '../actions/houseActions';
 import {removeHome} from '../actions/houseActions';
@@ -17,7 +17,7 @@ class HomesContainer extends Component {
       <div>
       <Homes houses={this.props.houses} deleteHome={this.props.removeHome}/>
       <HomeInput addHome={this.props.addHome} />
-      <RoomInput addRoom={this.props.addRoom}/>
+
       </div>
     )
   }

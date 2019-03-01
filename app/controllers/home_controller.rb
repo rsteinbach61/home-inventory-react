@@ -28,7 +28,7 @@ class HomeController < ApplicationController
   def rooms
     @house = Home.find_by(:id => params[:id])
     @rooms = @house.rooms
-    render json: @house
+    render json: @rooms
 
   end
 

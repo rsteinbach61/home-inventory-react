@@ -5,6 +5,7 @@ class Homes extends Component {
 
 
   render() {
+  debugger;
     const {houses, deleteHome} = this.props;
     const list = houses.map(house => {
       return(

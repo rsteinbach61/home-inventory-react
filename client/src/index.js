@@ -7,10 +7,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 import * as serviceWorker from './serviceWorker';
 
-const store  = createStore(rootReducer, applyMiddleware(thunk))
+const store  = createStore(rootReducer, composeWithDevTools( applyMiddleware(thunk)))
 
 store.dispatch(loadHouses());
 

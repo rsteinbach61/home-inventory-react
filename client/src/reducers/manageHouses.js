@@ -2,7 +2,9 @@ import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS } from '../a
 
 const initialState = {
   houses: [],
-  house: []
+  house: [],
+  rooms: [],
+  room: [],
 }
 
 

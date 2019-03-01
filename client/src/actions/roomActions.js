@@ -2,8 +2,8 @@ export function postRoomSuccess(room){
   return {type: "POST_ROOM_SUCCESS", room}
 }
 
-export function getRoomsSuccess(rooms){
-  return {type: "GET_ROOMS_SUCCESS", rooms}
+export function getRoomsSuccess(rooms, houses){
+  return {type: "GET_ROOMS_SUCCESS", rooms, houses}
 }
 
 async function postRoom(data){
@@ -42,14 +42,15 @@ export function addRoom(data) {
   }
 }
 
-export function getRoom(id) {
+export function getRoom(id, houses) {
   return function(dispatch) {
     return getRooms(id).then(rooms =>{
       if (rooms.status){
         alert(`Status: ${rooms.status}, ${rooms.error}`)
 
       }else {
-        dispatch(getRoomsSuccess(rooms))
+        dispatch(getRoomsSuccess(rooms, houses))
+
       }
     })
   }

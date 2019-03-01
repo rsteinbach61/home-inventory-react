@@ -7,8 +7,8 @@ class Home extends Component {
 
 
   render() {
-    debugger;
-    const {houses} = this.props;
+debugger;
+    const {houses, rooms} = this.props;
     let house = houses.filter(house => house.id === parseInt(this.props.match.params.id))
 
 
@@ -16,7 +16,7 @@ class Home extends Component {
       <div>
         <h3>Home Page For:</h3>
         {house[0].name}
-        <Rooms getRoom={this.props.getRoom} house={house[0]}/>
+        <Rooms getRoom={this.props.getRoom} houses={houses} house={house[0]}/>
       </div>
     )
   }

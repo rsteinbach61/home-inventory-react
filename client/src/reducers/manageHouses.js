@@ -3,8 +3,7 @@ import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS } from '../a
 const initialState = {
   houses: [],
   house: [],
-  rooms: [],
-  room: [],
+
 }
 
 
@@ -12,8 +11,8 @@ export default function manageHouses(state = {initialState}, action) {
 
   switch (action.type) {
     case GET_HOUSES_SUCCESS:
-
-      return {houses: action.houses}
+    
+      return { ...state, houses: action.houses }
 
 
     case POST_HOME_SUCCESS:

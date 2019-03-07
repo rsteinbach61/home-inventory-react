@@ -23,6 +23,7 @@ async function postRoom(data){
 }
 
 async function getRooms(id){
+
   const url = `/api/home/${id}/rooms.json`
   const fetchResult = fetch(url);
   const response = await fetchResult;
@@ -31,7 +32,7 @@ async function getRooms(id){
 }
 
 export function addRoom(data) {
-  debugger;
+
   return function(dispatch) {
     return postRoom(data).then(room =>{
       if (room.status){
@@ -44,8 +45,11 @@ export function addRoom(data) {
 }
 
 export function getRoom(id, houses) {
+debugger;
   return function(dispatch) {
+
     return getRooms(id).then(rooms =>{
+
       if (rooms.status){
         alert(`Status: ${rooms.status}, ${rooms.error}`)
 

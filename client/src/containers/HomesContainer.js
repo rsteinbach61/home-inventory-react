@@ -6,10 +6,14 @@ import { connect } from 'react-redux';
 import { addHome} from '../actions/houseActions';
 import {removeHome} from '../actions/houseActions';
 import {addRoom} from '../actions/roomActions'
-
+import { loadHouses} from '../actions/houseActions';
 
 
 class HomesContainer extends Component {
+  componentDidMount() {
+
+    this.props.loadHouses()
+  }
 
   render(){
 
@@ -25,4 +29,4 @@ class HomesContainer extends Component {
 const mapStateToProps = state => ({houses: state.homes.houses})
 
 
-export default connect(mapStateToProps, {removeHome, addHome, addRoom}) (HomesContainer)
+export default connect(mapStateToProps, {removeHome, addHome, addRoom, loadHouses}) (HomesContainer)

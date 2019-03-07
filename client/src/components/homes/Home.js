@@ -24,9 +24,8 @@ debugger;
     )
   }
 }
-const mapStateToProps = state => ({houses: state.homes.houses, rooms: state.rooms.rooms})
+const mapStateToProps = state => ({houses: state.homes.houses, rooms: state.rooms.rooms, room: state.rooms.room})
 
 export default connect(mapStateToProps, {getRoom, addRoom}) (Home)
 
-
-//<Rooms getRoom={this.props.getRoom} houses={houses} house={house[0]}/>
+// <Rooms getRoom={this.props.getRoom} houses={houses} house={house[0]}/>

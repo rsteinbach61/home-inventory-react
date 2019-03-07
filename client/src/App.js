@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import HomesContainer from './containers/HomesContainer';
-import Home from './components/homes/Home';
+import RoomsContainer from './containers/RoomsContainer'
+
 import NavBar from './components/NavBar';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
+
+
   render() {
 
     return (
@@ -13,7 +16,7 @@ class App extends Component {
         <div className="App">
           <NavBar/>
           <Route exact path="/" component={HomesContainer} />
-          <Route exact path="/home/:id" component={Home} />
+          <Route exact path="/home/:id" component={RoomsContainer} />
         </div>
       </Router>
     );

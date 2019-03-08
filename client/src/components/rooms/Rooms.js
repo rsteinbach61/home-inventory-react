@@ -15,18 +15,18 @@ class Rooms extends Component {
 render() {
 debugger;
   // const rooms = this.props.getRoom(this.props.house.id, this.props.houses);
-   let list = [];
+   //let list = [];
   //  rooms.then(rooms => {
   //
-      list = this.props.rooms.map(room => {
-        return room.name;
-      })
+      //list = this.props.rooms.map(room => {
+      //  return room.name;
+    //  })
 
 
   return(
     <div>
       Rooms
-{list}
+
 
     </div>
   )

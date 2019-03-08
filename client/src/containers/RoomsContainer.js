@@ -8,6 +8,8 @@ import { addRoom} from '../actions/roomActions';
 class RoomsContainer extends Component {
 
   componentWillMount() {
+
+    debugger;
     this.props.getRoom(this.props.match.params.id, this.props.houses)
   }
 

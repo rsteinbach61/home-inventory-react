@@ -1,4 +1,4 @@
-import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS } from '../actions/types'
+import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS, GET_ROOMS_SUCCESS } from '../actions/types'
 
 const initialState = {
   houses: [],
@@ -11,7 +11,7 @@ export default function manageHouses(state = {initialState}, action) {
 
   switch (action.type) {
     case GET_HOUSES_SUCCESS:
-    
+
       return { ...state, houses: action.houses }
 
 
@@ -28,6 +28,9 @@ export default function manageHouses(state = {initialState}, action) {
       houses: action.homes
 
     }
+
+    case GET_ROOMS_SUCCESS:
+      return { ...state, rooms: action.rooms }
 
     default: return initialState;
 

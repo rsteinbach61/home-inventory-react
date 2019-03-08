@@ -13,21 +13,20 @@ class Rooms extends Component {
    }
 
 render() {
-  
+debugger;
   // const rooms = this.props.getRoom(this.props.house.id, this.props.houses);
-  // let list = [];
+   let list = [];
   //  rooms.then(rooms => {
   //
-  //    list = rooms.map(room => {
-  //      return room.name;
-  //    })
-  //    return list
-  //  })
+      list = this.props.rooms.map(room => {
+        return room.name;
+      })
+
 
   return(
     <div>
       Rooms
-
+{list}
 
     </div>
   )

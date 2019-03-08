@@ -8,7 +8,6 @@ import { addRoom} from '../actions/roomActions';
 class RoomsContainer extends Component {
 
   componentWillMount() {
-debugger;
     this.props.getRoom(this.props.match.params.id, this.props.houses)
   }
 
@@ -42,12 +41,12 @@ render(){
 }
 
 const mapStateToProps = state => (
-  {houses: state.homes.houses, rooms: state.rooms.rooms, room: state.rooms.room})
 
- const mapDispatchToProps = (dispatch) => (
-   {getRoom, addRoom}
- )
-export default connect(mapStateToProps, mapDispatchToProps) (RoomsContainer)
+  {houses: state.homes.houses, rooms: state.homes.rooms, room: state.rooms.room})
+
+  const mapDispatchToProps = {getRoom, addRoom,}
+
+export default connect(mapStateToProps, mapDispatchToProps ) (RoomsContainer)
 
 
 // {house[0].name}

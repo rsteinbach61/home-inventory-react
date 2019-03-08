@@ -7,9 +7,9 @@ import { addRoom} from '../actions/roomActions';
 
 class RoomsContainer extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
 
-    debugger;
+
     this.props.getRoom(this.props.match.params.id, this.props.houses)
   }
 
@@ -18,17 +18,6 @@ render(){
 
   const {houses, rooms} = this.props;
   let house = houses.filter(house => house.id === parseInt(this.props.match.params.id))
-
-  // let rooms = this.props.getRoom(house[0].id, houses)
-  // let list = [];
-  //  rooms.then(rooms => {
-  //
-  //    list = rooms.map(room => {
-  //      return room.name;
-  //    })
-  //    return list
-  //  })
-
 
 
   return(

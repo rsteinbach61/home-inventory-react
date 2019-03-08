@@ -45,14 +45,11 @@ export function addRoom(data) {
 }
 
 export function getRoom(id, houses) {
-debugger;
+
   return function(dispatch) {
-
     return getRooms(id).then(rooms =>{
-
       if (rooms.status){
         alert(`Status: ${rooms.status}, ${rooms.error}`)
-
       }else {
         dispatch(getRoomsSuccess(rooms, houses))
 

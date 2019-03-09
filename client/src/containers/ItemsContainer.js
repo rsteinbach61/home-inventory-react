@@ -14,4 +14,10 @@ class ItemsContainer extends Component {
   }
 }
 
-export default ItemsContainer
+const mapStateToProps = state => (
+
+  {houses: state.homes.houses, rooms: state.homes.rooms, room: state.rooms.room})
+
+  const mapDispatchToProps = {getItem, addItem,}
+
+export default connect(mapStateToProps, mapDispatchToProps ) (ItemsContainer)

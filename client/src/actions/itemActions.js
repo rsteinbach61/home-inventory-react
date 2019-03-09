@@ -24,7 +24,7 @@ async function postItem(data){
 
 async function getItems(id){
 
-  const url = `/api/home/${id}/items.json`
+  const url = `/api/room/${id}/items.json`
   const fetchResult = fetch(url);
   const response = await fetchResult;
   const jsonData = await response.json();
@@ -44,7 +44,7 @@ export function addItem(data) {
   }
 }
 
-export function getItem(id, houses) {
+export function getItem(id) {
 
   return function(dispatch) {
     return getItems(id).then(items =>{

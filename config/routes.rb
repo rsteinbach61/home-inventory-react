@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     get :rooms, to: 'room#index'
     get 'home/:id/rooms', to: 'home#rooms'
     post :createroom, to: 'room#create'
+    post :createitem, to: 'item#create'
+    get 'room/:id/items', to: 'room#items'
   end
 end

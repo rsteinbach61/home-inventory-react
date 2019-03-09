@@ -11,7 +11,7 @@ render() {
          )
        })
       }
-debugger;
+
   return(
     <div>
       Rooms

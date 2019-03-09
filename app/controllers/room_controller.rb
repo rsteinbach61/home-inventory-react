@@ -7,9 +7,14 @@ class RoomController < ApplicationController
   def create
 
     @room = Room.create(name: params[:roomname], home_id: params[:houseId])
-    #@room = Room.new(name: params[:roomname])
-    #@room.save
+
     render json:@room
+  end
+
+  def items
+    @room = Room.find_by(:id => params[:id])
+    @items = @room.items
+    render json: @items
   end
 
   def delete

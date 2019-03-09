@@ -23,7 +23,7 @@ render(){
   return(
     <div>
       <h3>Home Page For:</h3>
-
+        {house[0].name}
       <RoomInput addRoom={this.props.addRoom} houseId={house[0].id}/>
       <Rooms houses={houses} house={house[0]} rooms={rooms}/>
     </div>

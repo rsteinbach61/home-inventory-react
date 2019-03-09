@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Roomlist from './Roomlist'
 class Rooms extends Component {
 
 render() {
@@ -7,7 +7,7 @@ render() {
   if(this.props.rooms){
        list = this.props.rooms.map(room => {
          return(
-         `<li>${room.name}</li>`
+           <Roomlist key={room.id} room={room}/>
          )
        })
       }
@@ -15,10 +15,14 @@ debugger;
   return(
     <div>
       Rooms
-<ul>{list}</ul>
+<ul>
+  {list}
+  </ul>
 
     </div>
   )
 }
 }
 export default Rooms
+
+//deleteHome={deleteRoom}

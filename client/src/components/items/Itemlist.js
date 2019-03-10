@@ -9,6 +9,7 @@ class Itemlist extends Component {
 
   render(){
     const {item} = this.props;
+    debugger;
     return(
       <div>
         <li>

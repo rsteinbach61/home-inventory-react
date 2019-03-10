@@ -10,10 +10,13 @@ class ItemsContainer extends Component {
     this.props.getItem(this.props.match.params.id)
   }
   render(){
+    const {items, rooms} = this.props;
+    let room = rooms.filter(room => room.id === parseInt(this.props.match.params.id))
+
     return(
       <div>ItemsContainer
-        < ItemInput addItem={addItem}/>
-        <Items />
+        < ItemInput addItem={addItem} roomId={room[0].id}/>
+        <Items rooms={rooms} room={room[0]} items={items}/>
       </div>
 
     )

@@ -13,6 +13,7 @@ class RoomController < ApplicationController
 
   def items
     @room = Room.find_by(:id => params[:id])
+
     @items = @room.items
     render json: @items
   end

@@ -7,6 +7,7 @@ export function getItemsSuccess(items){
 }
 
 async function postItem(data){
+  debugger;
   const url = '/api/createitem.json';
   const settings = {
     method: 'POST',

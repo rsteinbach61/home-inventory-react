@@ -1,4 +1,4 @@
-import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS, GET_ROOMS_SUCCESS, GET_ITEMS_SUCCESS } from '../actions/types'
+import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS, GET_ROOMS_SUCCESS, GET_ITEMS_SUCCESS, POST_ROOM_SUCCESS, POST_ITEM_SUCCESS } from '../actions/types'
 
 const initialState = {
   houses: [],
@@ -35,9 +35,14 @@ export default function manageHouses(state = {initialState}, action) {
     case GET_ITEMS_SUCCESS:
       return { ...state, items: action.items}
 
+      case POST_ROOM_SUCCESS:
+        return { ...state, rooms: [ ...state.rooms, action.room ] }
+
+      case POST_ITEM_SUCCESS:
+          return {...state, items: [ ...state.items, action.item]}
     default: return initialState;
 
   }
 
-  
+
 }

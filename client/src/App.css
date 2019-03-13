@@ -34,4 +34,12 @@
 
 .ItemInputForm {
   color: blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: gray;
+  padding-left: 10px;
+  height: 25px;
 }

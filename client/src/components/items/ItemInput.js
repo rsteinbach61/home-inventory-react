@@ -7,7 +7,7 @@ class ItemInput extends Component {
     super();
     this.state = {
       itemname: '',
-      user_id: "",
+      user_id: undefined,
       make: '',
       model: '',
       upc: '',

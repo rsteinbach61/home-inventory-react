@@ -7,14 +7,14 @@ class ItemInput extends Component {
     super();
     this.state = {
       itemname: '',
-      user_id: null,
+      user_id: "",
       make: '',
       model: '',
       upc: '',
-      purchase_date: null,
+      purchase_date: "",
       serial_num: '',
-      purchase_price: null,
-      roomId: null,
+      purchase_price: "",
+      roomId: "",
     };
   }
 
@@ -34,7 +34,7 @@ class ItemInput extends Component {
   render(){
     return(
       <div>ItemInput
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="ItemInputForm">
         <p>Name</p>
         <input type="text" name="itemname" onChange={(event) =>
         this.handleChange(event)} value={this.state.itemname}/>

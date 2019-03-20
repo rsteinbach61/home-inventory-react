@@ -7,7 +7,7 @@ class ItemInput extends Component {
     super();
     this.state = {
       itemname: '',
-      user_id: undefined,
+      user_id: 100,
       make: '',
       model: '',
       upc: '',
@@ -27,6 +27,7 @@ class ItemInput extends Component {
   }
 
   handleSubmit = event => {
+
     event.preventDefault();
     this.props.addItem(this.state)
     this.setState({itemname: ''})

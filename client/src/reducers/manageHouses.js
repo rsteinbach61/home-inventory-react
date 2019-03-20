@@ -8,7 +8,6 @@ const initialState = {
 
 
 export default function manageHouses(state = {initialState}, action) {
-
   switch (action.type) {
     case GET_HOUSES_SUCCESS:
 
@@ -33,16 +32,18 @@ export default function manageHouses(state = {initialState}, action) {
       return { ...state, rooms: action.rooms }
 
     case GET_ITEMS_SUCCESS:
+
       return { ...state, items: action.items}
 
       case POST_ROOM_SUCCESS:
+
         return { ...state, rooms: [ ...state.rooms, action.room ] }
 
       case POST_ITEM_SUCCESS:
-          return {...state, items: [ ...state.items, action.item]}
+
+          return { ...state, items: [ ...state.items, action.item] }
+
     default: return initialState;
 
   }
-
-
 }

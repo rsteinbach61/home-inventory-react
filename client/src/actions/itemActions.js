@@ -1,4 +1,5 @@
 export function postItemSuccess(item){
+
   return {type: "POST_ITEM_SUCCESS", item}
 }
 
@@ -6,22 +7,26 @@ export function getItemsSuccess(items){
   return {type: "GET_ITEMS_SUCCESS", items}
 }
 
-async function postItem(data){
-  debugger;
-  const url = '/api/createitem.json';
-  const settings = {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  }
-  const fetchResult = fetch(url, settings);
-  const response = await fetchResult;
-  const jsonData = await response.json();
-  return jsonData;
-}
+ async function postItem(data){
+
+   const url = '/api/createitem.json';
+   const settings = {
+     method: 'POST',
+     headers: {
+       Accept: 'application/json',
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(data)
+   }
+   const fetchResult = fetch(url, settings);
+   const response = await fetchResult;
+   const jsonData = await response.json();
+   return jsonData;
+ }
+
+// async function pstItem(data){
+// debugger;
+// }
 
 async function getItems(id){
 
@@ -32,18 +37,22 @@ async function getItems(id){
   return jsonData;
 }
 
-export function addItem(data) {
 
-  return function(dispatch) {
+
+export function addItem(data){
+  return function(dispatch){
+
     return postItem(data).then(item =>{
       if (item.status){
-          alert(`Status: ${item.status}, ${item.error}`)
-    } else {
-      dispatch(postItemSuccess(item))
-    }
+        alert(`Status: ${item.status}, ${item.error}`)
+      } else {
+        dispatch(postItemSuccess(item))
+      }
     })
-  }
 }
+}
+
+
 
 export function getItem(id) {
 

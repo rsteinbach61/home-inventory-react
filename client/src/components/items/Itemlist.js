@@ -9,11 +9,11 @@ class Itemlist extends Component {
 
   render(){
     const {item} = this.props;
-    debugger;
+
     return(
       <div>
         <li>
-          <NavLink to={`/room/${item.id}`}>
+          <NavLink to={`/item/${item.id}`}>
             {item.name}
           </NavLink>
           <button onClick={() => this.handleOnClick(item.id)}> X </button>

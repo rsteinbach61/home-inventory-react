@@ -4,6 +4,7 @@ import Items from '../components/items/Items';
 import { connect } from 'react-redux';
 import { getItem} from '../actions/itemActions';
 import { addItem} from '../actions/itemActions';
+import { bindActionCreators } from 'redux';
 
 class ItemsContainer extends Component {
   componentDidMount() {
@@ -15,7 +16,7 @@ class ItemsContainer extends Component {
 
     return(
       <div>ItemsContainer
-        < ItemInput addItem={addItem} roomId={room[0].id}/>
+        <ItemInput addItem={this.props.addItem} roomId={room[0].id}/>
         <Items rooms={rooms} room={room[0]} items={items}/>
       </div>
 
@@ -31,6 +32,13 @@ const mapStateToProps = state => (
      items: state.homes.items
    })
 
-  const mapDispatchToProps = {getItem, addItem,}
+  //const mapDispatchToProps = {getItem, addItem}
+
+  function mapDispatchToProps(dispatch) {
+    return {
+      dispatch,
+      ...bindActionCreators({getItem, addItem}, dispatch)
+    }
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps ) (ItemsContainer)

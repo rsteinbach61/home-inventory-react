@@ -3,6 +3,7 @@ import Itemlist from './Itemlist';
 
 class Items extends Component {
   render(){
+    debugger;
     let list = []
     if(this.props.items){
          list = this.props.items.map(item => {
@@ -12,7 +13,7 @@ class Items extends Component {
          })
         }
     return(
-      <div>Items
+      <div>Room {this.props.room.name} Items:
         <ul>
           {list}
         </ul>

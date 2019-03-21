@@ -3,7 +3,7 @@ import Itemlist from './Itemlist';
 
 class Items extends Component {
   render(){
-    debugger;
+
     let list = []
     if(this.props.items){
          list = this.props.items.map(item => {

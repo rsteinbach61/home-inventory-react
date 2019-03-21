@@ -4,6 +4,7 @@ import Items from '../components/items/Items';
 import { connect } from 'react-redux';
 import { getItem} from '../actions/itemActions';
 import { addItem} from '../actions/itemActions';
+import { getSingleItem} from '../actions/itemActions';
 import { bindActionCreators } from 'redux';
 
 class ItemsContainer extends Component {
@@ -37,7 +38,7 @@ const mapStateToProps = state => (
   function mapDispatchToProps(dispatch) {
     return {
       dispatch,
-      ...bindActionCreators({getItem, addItem}, dispatch)
+      ...bindActionCreators({getItem, addItem, getSingleItem}, dispatch)
     }
   }
 

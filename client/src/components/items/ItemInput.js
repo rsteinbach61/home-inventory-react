@@ -6,7 +6,7 @@ class ItemInput extends Component {
   constructor() {
     super();
     this.state = {
-      itemname: '',
+      name: '',
       user_id: 100,
       make: '',
       model: '',
@@ -14,7 +14,7 @@ class ItemInput extends Component {
       purchase_date: "",
       serial_num: '',
       purchase_price: "",
-      roomId: "",
+      room_id: "",
     };
   }
 
@@ -22,7 +22,7 @@ class ItemInput extends Component {
     let state = this.state
     let field = event.target.name
     state[field] = event.target.value
-    state.roomId = this.props.roomId
+    state.room_id = this.props.roomId
     this.setState(state)
   }
 
@@ -37,11 +37,11 @@ class ItemInput extends Component {
       <div>ItemInput
       <form onSubmit={this.handleSubmit} className="ItemInputForm">
         <p>Name</p>
-        <input type="text" name="itemname" onChange={(event) =>
-        this.handleChange(event)} value={this.state.itemname}/>
+        <input type="text" name="name" onChange={(event) =>
+        this.handleChange(event)} value={this.state.name}/>
         <p>User ID</p>
-        <input type="text" name="userid" onChange={(event) =>
-        this.handleChange(event)} value={this.state.userid}/>
+        <input type="text" name="user_id" onChange={(event) =>
+        this.handleChange(event)} value={this.state.user_id}/>
         <p>Make</p>
         <input type="text" name="make" onChange={(event) =>
         this.handleChange(event)} value={this.state.make}/>

@@ -7,6 +7,10 @@ export function getItemsSuccess(items){
   return {type: "GET_ITEMS_SUCCESS", items}
 }
 
+export function getSingleItemSuccess(items){
+  return {type: "GET_SINGLE_ITEM_SUCCESS", items}
+}
+
  async function postItem(data){
 
    const url = '/api/createitem.json';
@@ -39,6 +43,7 @@ async function getItems(id){
 
 
 
+
 export function addItem(data){
   return function(dispatch){
 
@@ -55,13 +60,34 @@ export function addItem(data){
 
 
 export function getItem(id) {
-
   return function(dispatch) {
     return getItems(id).then(items =>{
       if (items.status){
         alert(`Status: ${items.status}, ${items.error}`)
       }else {
         dispatch(getItemsSuccess(items))
+
+      }
+    })
+  }
+}
+
+async function fetchSingleItem(id){
+
+  const url = `/api/item/${id}.json`
+  const fetchResult = fetch(url);
+  const response = await fetchResult;
+  const jsonData = await response.json();
+  return jsonData;
+}
+
+export function getSingleItem(id) {
+  return function(dispatch) {
+    return fetchSingleItem(id).then(item =>{
+      if (item.status){
+        alert(`Status: ${item.status}, ${item.error}`)
+      }else {
+        dispatch(getSingleItemSuccess(item))
 
       }
     })

@@ -1,11 +1,20 @@
+require 'pry'
 class ItemController < ApplicationController
 
   def new
     @item = Item.new
   end
 
+  def show
+
+    @item = Item.find_by(id: params[:id])
+    render json: @item
+  end
+
   def create
-    @item = Item.create(name: params[:itemname], room_id: params[:roomId])
+    binding.pry
+    @item = Item.create(item_params)
+    
     render json: @item
   end
 
@@ -20,5 +29,8 @@ class ItemController < ApplicationController
     @items = Items.all
     render json: @items
   end
-
+  private
+    def item_params
+      params.require(:item).permit(:name, :user_id, :make,:model, :upc, :purchase_date, :serial_num, :purchase_price, :room_id)
+    end
 end

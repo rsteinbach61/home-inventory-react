@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     post :createroom, to: 'room#create'
     post :createitem, to: 'item#create'
     get 'room/:id/items', to: 'room#items'
+    get 'item/:id', to: 'item#show'
   end
 end

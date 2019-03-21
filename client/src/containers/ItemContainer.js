@@ -15,7 +15,7 @@ render(){
 debugger;
   return(
     <div>
-      <Item item={this.props.items}/>
+      <Item item={this.props.item}/>
     </div>
 
   )
@@ -26,7 +26,8 @@ const mapStateToProps = state => (
   {houses: state.homes.houses,
     rooms: state.homes.rooms,
      room: state.rooms.room,
-     items: state.homes.items
+     items: state.homes.items,
+     item: state.homes.item
    })
 
   //const mapDispatchToProps = {getItem, addItem}

@@ -3,6 +3,7 @@ import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS, GET_ROOMS_S
 const initialState = {
   houses: [],
   house: [],
+  item: []
 
 }
 
@@ -45,7 +46,8 @@ export default function manageHouses(state = {initialState}, action) {
           return { ...state, items: [ ...state.items, action.item] }
 
       case GET_SINGLE_ITEM_SUCCESS:
-        return{...state, items: action.items}
+      debugger;
+        return{...state, item: action.item}
 
 
     default: return initialState;

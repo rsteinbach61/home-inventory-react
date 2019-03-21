@@ -7,8 +7,8 @@ export function getItemsSuccess(items){
   return {type: "GET_ITEMS_SUCCESS", items}
 }
 
-export function getSingleItemSuccess(items){
-  return {type: "GET_SINGLE_ITEM_SUCCESS", items}
+export function getSingleItemSuccess(item){
+  return {type: "GET_SINGLE_ITEM_SUCCESS", item}
 }
 
  async function postItem(data){

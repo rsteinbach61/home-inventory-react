@@ -12,9 +12,9 @@ class ItemController < ApplicationController
   end
 
   def create
-    binding.pry
+
     @item = Item.create(item_params)
-    
+
     render json: @item
   end
 

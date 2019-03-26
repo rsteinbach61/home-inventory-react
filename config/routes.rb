@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     post :deleteroom, to: 'room#delete'
     get 'room/:id/items', to: 'room#items'
     get 'item/:id', to: 'item#show'
+    post ':deleteItem', to: 'item#delete'
   end
 end

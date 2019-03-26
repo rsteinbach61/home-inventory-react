@@ -11,6 +11,10 @@ export function getSingleItemSuccess(item){
   return {type: "GET_SINGLE_ITEM_SUCCESS", item}
 }
 
+export function deleteItemSuccess(item){
+  return {type: "DELETE_ITEM_SUCCESS", item}
+}
+
  async function postItem(data){
 
    const url = '/api/createitem.json';
@@ -40,9 +44,6 @@ async function getItems(id){
   const jsonData = await response.json();
   return jsonData;
 }
-
-
-
 
 export function addItem(data){
   return function(dispatch){
@@ -90,6 +91,30 @@ export function getSingleItem(id) {
         dispatch(getSingleItemSuccess(item))
 
       }
+    })
+  }
+}
+
+async function deleteItem(data){
+  const url = '/api/deleteitem.json';
+  const settings = {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+}
+    const fetchResult = fetch(url, settings);
+    const response = await fetchResult;
+    const jsonData = await response.json();
+    return jsonData;
+}
+
+export function removeItem(id) {
+  return function(dispatch) {
+    return deleteItem(id).then(item => {
+      dispatch(deleteItemSuccess(item))
     })
   }
 }

@@ -1,10 +1,9 @@
-import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS, GET_ROOMS_SUCCESS, GET_ITEMS_SUCCESS, POST_ROOM_SUCCESS, POST_ITEM_SUCCESS, GET_SINGLE_ITEM_SUCCESS, REMOVE_ROOM_SUCCESS } from '../actions/types'
+import { GET_HOUSES_SUCCESS, POST_HOME_SUCCESS, REMOVE_HOME_SUCCESS, GET_ROOMS_SUCCESS, GET_ITEMS_SUCCESS, POST_ROOM_SUCCESS, POST_ITEM_SUCCESS, GET_SINGLE_ITEM_SUCCESS, REMOVE_ROOM_SUCCESS, DELETE_ITEM_SUCCESS } from '../actions/types'
 
 const initialState = {
   houses: [],
   house: [],
   item: []
-
 }
 
 
@@ -53,9 +52,13 @@ export default function manageHouses(state = {initialState}, action) {
         return{
           ...state,
           rooms: action.rooms
-
         }
 
+        case DELETE_ITEM_SUCCESS:
+          return{
+            ...state,
+            items: action.items
+          }
 
     default: return initialState;
 

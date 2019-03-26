@@ -8,7 +8,8 @@ class Items extends Component {
     if(this.props.items){
          list = this.props.items.map(item => {
            return(
-             <Itemlist key={item.id} item={item}/>
+             <Itemlist key={item.id} item={item}
+               removeItem={this.props.removeItem}/>
            )
          })
         }

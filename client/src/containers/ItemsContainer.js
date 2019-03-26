@@ -4,6 +4,7 @@ import Items from '../components/items/Items';
 import { connect } from 'react-redux';
 import { getItem} from '../actions/itemActions';
 import { addItem} from '../actions/itemActions';
+import { removeItem} from '../actions/itemActions';
 import { getSingleItem} from '../actions/itemActions';
 import { bindActionCreators } from 'redux';
 
@@ -18,7 +19,7 @@ class ItemsContainer extends Component {
     return(
       <div>ItemsContainer
         <ItemInput addItem={this.props.addItem} roomId={room[0].id}/>
-        <Items rooms={rooms} room={room[0]} items={items}/>
+        <Items rooms={rooms} room={room[0]} items={items} removeItem={this.props.removeItem}/>
       </div>
 
     )
@@ -38,7 +39,7 @@ const mapStateToProps = state => (
   function mapDispatchToProps(dispatch) {
     return {
       dispatch,
-      ...bindActionCreators({getItem, addItem, getSingleItem}, dispatch)
+      ...bindActionCreators({getItem, addItem, getSingleItem, removeItem}, dispatch)
     }
   }
 

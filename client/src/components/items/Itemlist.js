@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 class Itemlist extends Component {
 
   handleOnClick(id){
-      this.props.deleteItem(id)
+      this.props.removeItem(id)
     }
 
   render(){

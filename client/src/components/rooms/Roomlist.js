@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 class Roomlist extends Component {
 
   handleOnClick(id){
-      this.props.deleteRoom(id)
+      this.props.removeRoom(id)
     }
 
   render(){

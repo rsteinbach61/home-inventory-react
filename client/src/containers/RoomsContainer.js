@@ -3,7 +3,9 @@ import RoomInput from '../components/rooms/RoomInput'
 import Rooms from '../components/rooms/Rooms';
 import { connect } from 'react-redux';
 import { getRoom} from '../actions/roomActions';
+import { removeRoom} from '../actions/roomActions';
 import { addRoom} from '../actions/roomActions';
+//import { bindActionCreators } from 'redux';
 
 class RoomsContainer extends Component {
 
@@ -23,7 +25,7 @@ render(){
       <h3>Home Page For: {house[0].name}</h3>
 
       <RoomInput addRoom={this.props.addRoom} houseId={house[0].id}/>
-      <Rooms houses={houses} house={house[0]} rooms={rooms}/>
+      <Rooms houses={houses} house={house[0]} rooms={rooms} removeRoom={this.props.removeRoom}/>
     </div>
   )
 }
@@ -33,6 +35,13 @@ const mapStateToProps = state => (
 
   {houses: state.homes.houses, rooms: state.homes.rooms, room: state.rooms.room})
 
-  const mapDispatchToProps = {getRoom, addRoom,}
+  //const mapDispatchToProps = {getRoom, addRoom,removeRoom}
 
-export default connect(mapStateToProps, mapDispatchToProps ) (RoomsContainer)
+  // function mapDispatchToProps(dispatch) {
+  //   return {
+  //     dispatch,
+  //     ...bindActionCreators({getRoom, addRoom, removeRoom}, dispatch)
+  //   }
+  // }
+
+export default connect(mapStateToProps, {getRoom, addRoom, removeRoom} ) (RoomsContainer)

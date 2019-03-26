@@ -6,6 +6,10 @@ export function getRoomsSuccess(rooms, houses){
   return {type: "GET_ROOMS_SUCCESS", rooms, houses}
 }
 
+export function removeRoomSuccess(rooms){
+  return {type: "REMOVE_ROOM_SUCCESS", rooms}
+}
+
 async function postRoom(data){
   const url = '/api/createroom.json';
   const settings = {
@@ -53,6 +57,30 @@ export function getRoom(id, houses) {
         dispatch(getRoomsSuccess(rooms, houses))
 
       }
+    })
+  }
+}
+
+async function deleteRoom(data){
+  const url = '/api/deleteroom.json';
+  const settings = {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+}
+    const fetchResult = fetch(url, settings);
+    const response = await fetchResult;
+    const jsonData = await response.json();
+    return jsonData;
+}
+
+export function removeRoom(data){
+  return function(dispatch) {
+    return deleteRoom(data).then(rooms =>{
+      dispatch(removeRoomSuccess(rooms))
     })
   }
 }

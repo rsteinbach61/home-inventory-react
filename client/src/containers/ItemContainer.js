@@ -12,7 +12,7 @@ class ItemContainer extends Component {
 
 render(){
 
-debugger;
+
   return(
     <div>
       <Item item={this.props.item}/>

@@ -19,10 +19,15 @@ class RoomController < ApplicationController
   end
 
   def delete
+      #binding.pry
+    @room = Room.find_by(id: params[:_json])
+    @house = Home.find_by(id: @room.home_id)
+    @room.destroy
+    @rooms = @house.rooms
+    render json: @rooms
   end
 
   def index
-  binding.pry
     @rooms = Room.all
     render json:@rooms
   end

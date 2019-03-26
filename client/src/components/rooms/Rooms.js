@@ -3,11 +3,12 @@ import Roomlist from './Roomlist'
 class Rooms extends Component {
 
 render() {
+  //const {removeRoom} = this.props
   let list = []
   if(this.props.rooms){
        list = this.props.rooms.map(room => {
          return(
-           <Roomlist key={room.id} room={room}/>
+           <Roomlist key={room.id} room={room} removeRoom={this.props.removeRoom}/>
          )
        })
       }

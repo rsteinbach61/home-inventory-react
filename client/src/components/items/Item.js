@@ -3,7 +3,6 @@ import React, { Component} from 'react'
 class Item extends Component {
 
   render(){
-    debugger;
     return(
       <div>
         <h3>Item: </h3>

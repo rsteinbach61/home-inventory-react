@@ -16,16 +16,25 @@ class RoomsContainer extends Component {
   }
 
 render(){
-  const {houses, rooms} = this.props;
-  let house = houses.filter(house => house.id === parseInt(this.props.match.params.id))
+
+
+  let house = this.props.houses.find(house => house.id === parseInt(this.props.match.params.id))
+  debugger;
+  //const {houses, rooms} = this.props;
+  // let house = houses === [] ? [] : houses.find(house => house.id === parseInt(this.props.match.params.id))
+
+  // let house = houses.filter(house => house.id === parseInt(this.props.match.params.id))
 
 
   return(
     <div>
-      <h3>Home Page For: {house[0].name}</h3>
 
-      <RoomInput addRoom={this.props.addRoom} houseId={house[0].id}/>
-      <Rooms houses={houses} house={house[0]} rooms={rooms} removeRoom={this.props.removeRoom}/>
+       <h3>Home Page For: {house.name}</h3>
+
+       <RoomInput addRoom={this.props.addRoom} houseId={house.id}/>
+       <Rooms houses={this.props.houses} house={house} rooms={this.props.rooms} removeRoom={this.props.removeRoom}/>
+
+
     </div>
   )
 }
@@ -45,3 +54,9 @@ const mapStateToProps = state => (
   // }
 
 export default connect(mapStateToProps, {getRoom, addRoom, removeRoom} ) (RoomsContainer)
+/*
+// <h3>Home Page For: {house.name}</h3>
+//
+// <RoomInput addRoom={this.props.addRoom} houseId={house.id}/>
+// <Rooms houses={houses} house={house} rooms={rooms} removeRoom={this.props.removeRoom}/>
+*/

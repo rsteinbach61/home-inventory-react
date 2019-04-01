@@ -17,7 +17,7 @@ export function deleteItemSuccess(item){
 
  async function postItem(data){
 
-   const url = '/api/createitem.json';
+   const url = '/api/item.json';
    const settings = {
      method: 'POST',
      headers: {

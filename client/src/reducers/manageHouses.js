@@ -4,6 +4,7 @@ const initialState = {
   houses: [],
   house: [],
   item: [],
+  items: [],
   rooms: [],
   room: []
 }

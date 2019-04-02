@@ -13,7 +13,7 @@ class ItemsContainer extends Component {
     this.props.getItem(this.props.match.params.id)
   }
   render(){
-    debugger;
+  
     const {items, rooms} = this.props;
     let room = rooms.filter(room => room.id === parseInt(this.props.match.params.id))
 

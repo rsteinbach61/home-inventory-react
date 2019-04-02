@@ -19,7 +19,7 @@ render(){
 
 
   let house = this.props.houses.find(house => house.id === parseInt(this.props.match.params.id))
-  debugger;
+
   //const {houses, rooms} = this.props;
   // let house = houses === [] ? [] : houses.find(house => house.id === parseInt(this.props.match.params.id))
 

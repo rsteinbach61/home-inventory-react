@@ -95,15 +95,16 @@ export function getSingleItem(id) {
   }
 }
 
-async function deleteItem(data){
-  const url = '/api/deleteitem.json';
+async function deleteItem(id){
+  debugger;
+  const url = `/api/item/${id}.json`;
   const settings = {
-    method: 'POST',
+    method: 'DELETE',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(id)
 }
     const fetchResult = fetch(url, settings);
     const response = await fetchResult;

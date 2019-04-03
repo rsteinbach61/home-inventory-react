@@ -11,8 +11,8 @@ export function getSingleItemSuccess(item){
   return {type: "GET_SINGLE_ITEM_SUCCESS", item}
 }
 
-export function deleteItemSuccess(item){
-  return {type: "DELETE_ITEM_SUCCESS", item}
+export function deleteItemSuccess(items){
+  return {type: "DELETE_ITEM_SUCCESS", items}
 }
 
  async function postItem(data){
@@ -96,7 +96,6 @@ export function getSingleItem(id) {
 }
 
 async function deleteItem(id){
-  debugger;
   const url = `/api/item/${id}.json`;
   const settings = {
     method: 'DELETE',
@@ -114,8 +113,8 @@ async function deleteItem(id){
 
 export function removeItem(id) {
   return function(dispatch) {
-    return deleteItem(id).then(item => {
-      dispatch(deleteItemSuccess(item))
+    return deleteItem(id).then(items => {
+      dispatch(deleteItemSuccess(items))
     })
   }
 }

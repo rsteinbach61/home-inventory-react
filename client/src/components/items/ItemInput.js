@@ -34,24 +34,24 @@ class ItemInput extends Component {
   }
   render(){
     return(
-      <div>ItemInput
+      <div id="item_input">
       <form onSubmit={this.handleSubmit} className="ItemInputForm">
-        <p>Name</p>
+        <p>Name:</p>
         <input type="text" name="name" onChange={(event) =>
         this.handleChange(event)} value={this.state.name}/>
-        <p>User ID</p>
+      <p>User ID:</p>
         <input type="text" name="user_id" onChange={(event) =>
         this.handleChange(event)} value={this.state.user_id}/>
-        <p>Make</p>
+      <p>Make:</p>
         <input type="text" name="make" onChange={(event) =>
         this.handleChange(event)} value={this.state.make}/>
-        <p>Model</p>
+      <p>Model:</p>
         <input type="text" name="model" onChange={(event) =>
         this.handleChange(event)} value={this.state.model}/>
-        <p>UPC</p>
+      <p>UPC:</p>
         <input type="text" name="upc" onChange={(event) =>
         this.handleChange(event)} value={this.state.upc}/>
-        <p>Purchase Date</p>
+      <p>Purchase Date:</p>
         <input type="text" name="purchase_date" onChange={(event) =>
         this.handleChange(event)} value={this.state.purchase_date}/>
         <p>Serial Number</p>

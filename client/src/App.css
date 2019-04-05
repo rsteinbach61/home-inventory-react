@@ -43,3 +43,14 @@
   padding-left: 10px;
   height: 25px;
 }
+
+.container {
+  background-color: #ffffcc;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.ItemInputForm {
+  width: 200px;
+}

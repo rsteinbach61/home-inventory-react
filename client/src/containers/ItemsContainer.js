@@ -18,7 +18,7 @@ class ItemsContainer extends Component {
     let room = rooms.filter(room => room.id === parseInt(this.props.match.params.id))
 
     return(
-      <div>ItemsContainer
+      <div>
         <ItemInput addItem={this.props.addItem} roomId={room[0].id}/>
         <Items rooms={rooms} room={room[0]} items={items} removeItem={this.props.removeItem}/>
       </div>

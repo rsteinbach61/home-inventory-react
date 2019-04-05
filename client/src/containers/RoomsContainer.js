@@ -12,18 +12,22 @@ class RoomsContainer extends Component {
   componentDidMount() {
 
 
+
     this.props.getRoom(this.props.match.params.id, this.props.houses)
   }
 
 render(){
 
+  const {houses} = this.props;
+  debugger;
+  let house = houses.find(h => h.id === parseInt(this.props.match.params.id))
 
-  let house = this.props.houses.find(house => house.id === parseInt(this.props.match.params.id))
+
 
   //const {houses, rooms} = this.props;
-  // let house = houses === [] ? [] : houses.find(house => house.id === parseInt(this.props.match.params.id))
+  // let house = this.props.houses === [] ? [] : houses.find(house => house.id === parseInt(this.props.match.params.id))
 
-  // let house = houses.filter(house => house.id === parseInt(this.props.match.params.id))
+  // let house = this.props.houses.filter(house => house.id === parseInt(this.props.match.params.id))
 
 
   return(
@@ -42,7 +46,8 @@ render(){
 
 const mapStateToProps = state => (
 
-  {houses: state.homes.houses, rooms: state.homes.rooms, room: state.rooms.room})
+  {houses: state.homes.houses, rooms: state.homes.rooms, room: state.homes.room}
+)
 
   //const mapDispatchToProps = {getRoom, addRoom,removeRoom}
 

@@ -1,8 +1,9 @@
 import { combineReducers} from 'redux';
 import manageHouses from './manageHouses';
-import manageRooms from './manageRooms';
+//import manageRooms from './manageRooms';
 
-export default combineReducers({
+const rootReducer =  combineReducers({
   homes: manageHouses,
-  rooms: manageRooms
+  //rooms: manageRooms
 });
+export default rootReducer

@@ -25,7 +25,7 @@ const mapStateToProps = state => (
 
   {houses: state.homes.houses,
     rooms: state.homes.rooms,
-     room: state.rooms.room,
+     room: state.homes.room,
      items: state.homes.items,
      item: state.homes.item
    })

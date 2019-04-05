@@ -13,7 +13,7 @@ class ItemsContainer extends Component {
     this.props.getItem(this.props.match.params.id)
   }
   render(){
-  
+
     const {items, rooms} = this.props;
     let room = rooms.filter(room => room.id === parseInt(this.props.match.params.id))
 
@@ -31,7 +31,7 @@ const mapStateToProps = state => (
 
   {houses: state.homes.houses,
     rooms: state.homes.rooms,
-     room: state.rooms.room,
+     room: state.homes.room,
      items: state.homes.items
    })
 

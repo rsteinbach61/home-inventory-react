@@ -15,10 +15,15 @@ render() {
 
   return(
     <div>
-      Rooms
-<ul>
-  {list}
-  </ul>
+      <br></br>
+      <table>
+        <tr>
+          <th>Rooms</th>
+        </tr>
+        <tr>
+          {list}
+        </tr>
+      </table>
 
     </div>
   )

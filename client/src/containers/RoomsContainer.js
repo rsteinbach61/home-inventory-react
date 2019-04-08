@@ -37,6 +37,7 @@ render(){
 
        <RoomInput addRoom={this.props.addRoom} houseId={house.id}/>
        <Rooms houses={this.props.houses} house={house} rooms={this.props.rooms} removeRoom={this.props.removeRoom}/>
+       
 
 
     </div>

@@ -30,7 +30,7 @@ class RoomInput extends Component {
       <div>Add Room
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="roomname" onChange={(event) =>
-          this.handleChange(event)} value={this.state.roomname}/>
+          this.handleChange(event)} value={this.state.roomname} size="30"/>
           <input type="submit" />
           </form>
 

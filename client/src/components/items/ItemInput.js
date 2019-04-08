@@ -36,31 +36,32 @@ class ItemInput extends Component {
     return(
       <div id="item_input">
       <form onSubmit={this.handleSubmit} className="ItemInputForm">
-        <p>Name:</p>
-        <input type="text" name="name" onChange={(event) =>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" onChange={(event) =>
         this.handleChange(event)} value={this.state.name} size="50"/>
-      <p>User ID:</p>
-        <input type="text" name="user_id" onChange={(event) =>
+        <input type="hidden" id="user_id" name="user_id" onChange={(event) =>
         this.handleChange(event)} value={this.state.user_id}/>
-      <p>Make:</p>
-        <input type="text" name="make" onChange={(event) =>
+        <label for="make">Make</label>
+        <input type="text" id="make" name="make" onChange={(event) =>
         this.handleChange(event)} value={this.state.make}/>
-      <p>Model:</p>
+        <label for="name">Model</label>
         <input type="text" name="model" onChange={(event) =>
         this.handleChange(event)} value={this.state.model}/>
-      <p>UPC:</p>
-        <input type="text" name="upc" onChange={(event) =>
+        <label for="upc">UPC</label>
+        <input type="text" id="upc" name="upc" onChange={(event) =>
         this.handleChange(event)} value={this.state.upc}/>
-      <p>Purchase Date:</p>
-        <input type="text" name="purchase_date" onChange={(event) =>
-        this.handleChange(event)} value={this.state.purchase_date}/>
-        <p>Serial Number</p>
-        <input type="text" name="serial_num" onChange={(event) =>
+
+        <label for="serial_num">Serial Number</label>
+        <input type="text" id="serial_num" name="serial_num" onChange={(event) =>
         this.handleChange(event)} value={this.state.serial_num}/>
-        <p>Purchase Price</p>
-        <input type="text" name="purchase_price" onChange={(event) =>
+        <label for="purchase_price">Purchase Price</label>
+        <input type="text" id="purchase_price" name="purchase_price" onChange={(event) =>
         this.handleChange(event)} value={this.state.purchase_price}/>
+        <label for="purchase_date">Purchase Date</label>
+        <input type="text" id="purchase_date" name="purchase_date" onChange={(event) =>
+        this.handleChange(event)} value={this.state.purchase_date}/>
         <br></br>
+
         <input type="submit" size="20"/>
         </form>
       </div>

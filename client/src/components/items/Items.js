@@ -14,10 +14,14 @@ class Items extends Component {
          })
         }
     return(
-      <div>Room {this.props.room.name} Items:
-        <ul>
-          {list}
-        </ul>
+      <div>
+        <br></br>
+        <table>
+          <tr>
+            <th>{this.props.room.name} Items:</th>
+          </tr>
+          <tr>{list}</tr>
+        </table>
       </div>
     )
   }

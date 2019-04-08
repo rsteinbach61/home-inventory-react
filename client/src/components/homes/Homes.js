@@ -5,7 +5,7 @@ class Homes extends Component {
 
 
   render() {
-  
+
     const {houses, deleteHome} = this.props;
     const list = houses.map(house => {
       return(
@@ -16,7 +16,7 @@ class Homes extends Component {
     })
     return(
       <div>
-        <h1>Homes</h1>
+        <h3>Homes: </h3>
         <ul>
         {list}
         </ul>

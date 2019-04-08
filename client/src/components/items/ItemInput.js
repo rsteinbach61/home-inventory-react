@@ -38,7 +38,7 @@ class ItemInput extends Component {
       <form onSubmit={this.handleSubmit} className="ItemInputForm">
         <p>Name:</p>
         <input type="text" name="name" onChange={(event) =>
-        this.handleChange(event)} value={this.state.name}/>
+        this.handleChange(event)} value={this.state.name} size="50"/>
       <p>User ID:</p>
         <input type="text" name="user_id" onChange={(event) =>
         this.handleChange(event)} value={this.state.user_id}/>
@@ -61,7 +61,7 @@ class ItemInput extends Component {
         <input type="text" name="purchase_price" onChange={(event) =>
         this.handleChange(event)} value={this.state.purchase_price}/>
         <br></br>
-        <input type="submit" />
+        <input type="submit" size="20"/>
         </form>
       </div>
     )

@@ -12,7 +12,7 @@ class Roomlist extends Component {
       <div>
         <li>
           <NavLink to={`/room/${room.id}`}>
-            {room.name}
+            {`${room.name} `}
           </NavLink>
           <button onClick={() => this.handleOnClick(room.id)}> X </button>
         </li>

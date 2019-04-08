@@ -12,7 +12,7 @@ class Homelist extends Component {
       <div>
         <li>
           <NavLink to={`/home/${home.id}`}>
-            {home.name}
+            {`${home.name} `}
           </NavLink>
           <button onClick={() => this.handleOnClick(home.id)}> X </button>
         </li>

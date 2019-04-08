@@ -33,11 +33,11 @@ render(){
   return(
     <div>
 
-       <h3>Home Page For: {house.name}</h3>
+       <h3>Home: {house.name}</h3>
 
        <RoomInput addRoom={this.props.addRoom} houseId={house.id}/>
        <Rooms houses={this.props.houses} house={house} rooms={this.props.rooms} removeRoom={this.props.removeRoom}/>
-       
+
 
 
     </div>
@@ -52,17 +52,4 @@ const mapStateToProps = state => (
 
   //const mapDispatchToProps = {getRoom, addRoom,removeRoom}
 
-  // function mapDispatchToProps(dispatch) {
-  //   return {
-  //     dispatch,
-  //     ...bindActionCreators({getRoom, addRoom, removeRoom}, dispatch)
-  //   }
-  // }
-
-export default connect(mapStateToProps, {getRoom, addRoom, removeRoom} ) (RoomsContainer)
-/*
-// <h3>Home Page For: {house.name}</h3>
-//
-// <RoomInput addRoom={this.props.addRoom} houseId={house.id}/>
-// <Rooms houses={houses} house={house} rooms={rooms} removeRoom={this.props.removeRoom}/>
-*/
+export default connect(mapStateToProps, {getRoom, addRoom,removeRoom} ) (RoomsContainer)

@@ -12,12 +12,14 @@ class Itemlist extends Component {
 
     return(
       <div>
-        <li>
-          <NavLink to={`/item/${item.id}`}>
-            {item.name}
-          </NavLink>
-          <button onClick={() => this.handleOnClick(item.id)}> X </button>
-        </li>
+        <tr>
+          <td>
+            <NavLink to={`/item/${item.id}`}>
+              {item.name}
+            </NavLink>
+            <button onClick={() => this.handleOnClick(item.id)}> X </button>
+          </td>
+        </tr>
       </div>
     )
   }

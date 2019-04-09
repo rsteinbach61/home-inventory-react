@@ -19,7 +19,7 @@ class RoomsContainer extends Component {
 render(){
 
   const {houses} = this.props;
-  debugger;
+
   let house = houses.find(h => h.id === parseInt(this.props.match.params.id))
 
 

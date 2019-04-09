@@ -9,14 +9,15 @@ class Roomlist extends Component {
   render(){
     const {room} = this.props;
     return(
-      <div>
-        <li>
+      <tr>
+        <td>
           <NavLink to={`/room/${room.id}`}>
             {`${room.name} `}
           </NavLink>
           <button onClick={() => this.handleOnClick(room.id)}> X </button>
-        </li>
-      </div>
+        </td>
+      </tr>
+
     )
   }
 }

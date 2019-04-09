@@ -19,8 +19,16 @@ class ItemsContainer extends Component {
 
     return(
       <div>
-        <ItemInput addItem={this.props.addItem} roomId={room[0].id}/>
-        <Items rooms={rooms} room={room[0]} items={items} removeItem={this.props.removeItem}/>
+        <table>
+          <tr>
+            <td>
+            <ItemInput addItem={this.props.addItem} roomId={room[0].id}/>
+            </td>
+            <td>
+            <Items rooms={rooms} room={room[0]} items={items} removeItem={this.props.removeItem}/>
+            </td>
+          </tr>
+        </table>
       </div>
 
     )

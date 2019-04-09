@@ -18,11 +18,11 @@ render() {
       <br></br>
       <table>
         <tr>
-          <th>Rooms:</th>
+          <th>Rooms</th>
         </tr>
-        <tr>
+        
           {list}
-        </tr>
+
       </table>
 
     </div>

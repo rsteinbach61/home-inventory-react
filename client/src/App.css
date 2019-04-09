@@ -1,5 +1,5 @@
 .App {
-  text-align: left;
+  text-align: center;
   margin: 20px;
 }
 
@@ -51,6 +51,12 @@
   padding-top: 20px;
 }
 
-.ItemInputForm {
-  width: 200px;
+
+.button {
+  width: 30%;
+}
+
+
+table, th, td, tr {
+  border: 1px solid gray;
 }

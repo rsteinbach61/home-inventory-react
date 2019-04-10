@@ -36,6 +36,7 @@ class ItemInput extends Component {
     return(
       <div id="item_input">
       <form onSubmit={this.handleSubmit} className="ItemInputForm">
+        <legend>Add Item</legend>
 
       <p>
         <label for="name">Name <input type="text" id="name" name="name"         onChange={(event) =>this.handleChange(event)} value={this.state.name}/></label>

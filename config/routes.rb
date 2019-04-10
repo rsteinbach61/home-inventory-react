@@ -6,12 +6,13 @@ Rails.application.routes.draw do
     post :delete, to: 'home#delete'
     get :rooms, to: 'room#index'
     get 'home/:id/rooms', to: 'home#rooms'
-    post :createroom, to: 'room#create'
+    #post :createroom, to: 'room#create'
     #post :createitem, to: 'item#create'
-    post :deleteroom, to: 'room#delete'
+    #post :deleteroom, to: 'room#delete'
     get 'room/:id/items', to: 'room#items'
     #get 'item/:id', to: 'item#show'
     #post ':deleteItem', to: 'item#delete'
     resources :item
+    resources :room
   end
 end

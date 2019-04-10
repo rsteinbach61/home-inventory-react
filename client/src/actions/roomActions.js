@@ -11,7 +11,7 @@ export function removeRoomSuccess(rooms){
 }
 
 async function postRoom(data){
-  const url = '/api/createroom.json';
+  const url = '/api/room.json';
   const settings = {
     method: 'POST',
     headers: {
@@ -59,15 +59,15 @@ export function getRoom(id, houses) {
   }
 }
 
-async function deleteRoom(data){
-  const url = '/api/deleteroom.json';
+async function deleteRoom(id){
+  const url = `/api/room/${id}.json`;
   const settings = {
-    method: 'POST',
+    method: 'DELETE',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(id)
 }
     const fetchResult = fetch(url, settings);
     const response = await fetchResult;

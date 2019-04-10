@@ -15,8 +15,10 @@ class Itemlist extends Component {
         <tr>
           <td>
             <NavLink to={`/item/${item.id}`}>
-              {item.name}
+              {`${item.name} `}
             </NavLink>
+          </td>
+            <td>
             <button onClick={() => this.handleOnClick(item.id)}> X </button>
           </td>
         </tr>

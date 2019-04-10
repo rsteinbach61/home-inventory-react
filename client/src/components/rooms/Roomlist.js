@@ -14,6 +14,8 @@ class Roomlist extends Component {
           <NavLink to={`/room/${room.id}`}>
             {`${room.name} `}
           </NavLink>
+        </td>
+        <td>
           <button onClick={() => this.handleOnClick(room.id)}> X </button>
         </td>
       </tr>

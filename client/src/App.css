@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   margin: 20px;
+  align-items: center;
+
 }
 
 .App-logo {
@@ -45,6 +47,7 @@
 }
 
 .container {
+
   background-color: #ffffcc;
   padding-left: 20px;
   padding-bottom: 20px;
@@ -57,7 +60,15 @@
 }
 
 
-table, td, tr {
-  border: 1px solid gray;
+table, tr {
+  border: 4px solid gray;
   background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+.room_items {
+  vertical-align: top;
 }

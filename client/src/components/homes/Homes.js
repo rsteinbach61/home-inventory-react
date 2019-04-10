@@ -16,10 +16,13 @@ class Homes extends Component {
     })
     return(
       <div>
-        <h3>Homes: </h3>
-        <ul>
-        {list}
-        </ul>
+
+        <table >
+          <tr>
+            <th>Homes</th>
+          </tr>
+           {list}
+        </table>
       </div>
     )
   }

@@ -33,7 +33,6 @@ export function deleteItemSuccess(items){
  }
 
 // async function pstItem(data){
-// debugger;
 // }
 
 async function getItems(id){

@@ -41,7 +41,7 @@ export default function manageHouses(state = {initialState}, action) {
       return { ...state, items: action.items}
 
         case POST_ROOM_SUCCESS:
-         debugger;
+    
           return { ...state, rooms: [ ...state.rooms, action.room ] }
 
       case POST_ITEM_SUCCESS:

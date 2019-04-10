@@ -14,7 +14,7 @@ export default function manageRooms(state = { initialState }, action) {
 
 //   switch (action.type) {
 //      case POST_ROOM_SUCCESS:
-//     // debugger;
+//   
 //       return { ...state, rooms: [ ...state.rooms, action.room ] }
 //
 //       case GET_ROOMS_SUCCESS:

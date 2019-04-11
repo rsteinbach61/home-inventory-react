@@ -1,8 +1,10 @@
 import React, { Component} from 'react'
+import { Link } from 'react-router-dom';
 
 class Item extends Component {
 
   render(){
+
     return(
       <div>
         <table>
@@ -37,7 +39,14 @@ class Item extends Component {
             </tr>
 
         </table>
+          <Link to={{
+              pathname: `/item/${this.props.item.id}/edit`,
+              state: {
+                      name: this.props.item.name,
+                      make: this.props.item.make
 
+                      }
+            }}>Edit Item</Link>
       </div>
     )
   }

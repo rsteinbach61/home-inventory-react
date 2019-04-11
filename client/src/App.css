@@ -2,6 +2,7 @@
   text-align: center;
   margin: 20px;
   align-items: center;
+  width: auto;
 
 }
 
@@ -46,8 +47,10 @@
   height: 25px;
 }
 
-.container {
-
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background-color: #ffffcc;
   padding-left: 20px;
   padding-bottom: 20px;

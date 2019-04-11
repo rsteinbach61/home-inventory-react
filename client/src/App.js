@@ -15,8 +15,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <NavBar/>
-          <div className="container">
+
+          <div id="container">
+            <div><NavBar/></div>
+
             <Route exact path="/" component={HomesContainer} />
             <Route exact path="/home/:id" component={RoomsContainer} />
             <Route exact path="/room/:id" component={ItemsContainer} />

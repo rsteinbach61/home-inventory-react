@@ -2,7 +2,7 @@
   text-align: center;
   margin: 20px;
   align-items: center;
-  width: auto;
+  width: 40%;
 
 }
 
@@ -43,7 +43,8 @@
 
 .navbar {
   background-color: gray;
-  padding-left: 10px;
+  
+
   height: 25px;
 }
 
@@ -59,7 +60,7 @@
 
 
 .button {
-  width: 30%;
+  width: auto;
 }
 
 

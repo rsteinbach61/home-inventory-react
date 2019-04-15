@@ -9,7 +9,7 @@ class Homelist extends Component {
   render(){
     const {home} = this.props;
     return(
-      <div>
+    //  <div>
         <tr>
           <td>
           <NavLink to={`/home/${home.id}`}>
@@ -20,7 +20,7 @@ class Homelist extends Component {
           <button onClick={() => this.handleOnClick(home.id)}> X </button>
           </td>
         </tr>
-      </div>
+      //</div>
     )
   }
 }

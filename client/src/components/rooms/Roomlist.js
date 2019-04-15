@@ -9,17 +9,18 @@ class Roomlist extends Component {
   render(){
     const {room} = this.props;
     return(
-      <tr>
-        <td>
-          <NavLink to={`/room/${room.id}`}>
-            {`${room.name} `}
-          </NavLink>
-        </td>
-        <td>
-          <button onClick={() => this.handleOnClick(room.id)}> X </button>
-        </td>
-      </tr>
-
+      <tbody>
+        <tr>
+          <td>
+            <NavLink to={`/room/${room.id}`}>
+              {`${room.name} `}
+            </NavLink>
+          </td>
+          <td>
+            <button onClick={() => this.handleOnClick(room.id)}> X </button>
+          </td>
+        </tr>
+      </tbody>
     )
   }
 }

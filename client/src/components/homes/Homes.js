@@ -18,10 +18,12 @@ class Homes extends Component {
       <div>
 
         <table >
-          <tr>
-            <th>Homes</th>
-          </tr>
-           {list}
+          <tbody>
+            <tr>
+              <th>Homes</th>
+            </tr>
+             {list}
+           </tbody>
         </table>
       </div>
     )

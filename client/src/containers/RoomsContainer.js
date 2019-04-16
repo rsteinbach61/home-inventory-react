@@ -17,7 +17,7 @@ class RoomsContainer extends Component {
   }
 
 render(){
-
+  console.log("rooms container")
   const {houses} = this.props;
 
   let house = houses.find(h => h.id === parseInt(this.props.match.params.id))
@@ -31,7 +31,7 @@ render(){
 
 
   return(
-    <div>  
+    <div>
        <h3>Home: {house.name}</h3>
        <Rooms houses={this.props.houses} house={house} rooms={this.props.rooms} removeRoom={this.props.removeRoom}/>
        <RoomInput addRoom={this.props.addRoom} houseId={house.id}/>

@@ -9,7 +9,7 @@ class Roomlist extends Component {
   render(){
     const {room} = this.props;
     return(
-      <tbody>
+
         <tr>
           <td>
             <NavLink to={`/room/${room.id}`}>
@@ -20,7 +20,7 @@ class Roomlist extends Component {
             <button onClick={() => this.handleOnClick(room.id)}> X </button>
           </td>
         </tr>
-      </tbody>
+      
     )
   }
 }

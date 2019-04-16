@@ -3,12 +3,12 @@ import Roomlist from './Roomlist'
 class Rooms extends Component {
 
 render() {
-  //const {removeRoom} = this.props
+  const {removeRoom} = this.props
   let list = []
   if(this.props.rooms){
        list = this.props.rooms.map(room => {
          return(
-           <Roomlist key={room.id} room={room} removeRoom={this.props.removeRoom}/>
+           <Roomlist key={room.id} room={room} removeRoom={removeRoom}/>
          )
        })
       }
@@ -17,12 +17,13 @@ render() {
     <div>
       <br></br>
       <table>
-        <tr>
-          <th>Rooms</th>
-        </tr>
-        
-          {list}
+        <tbody>
+          <tr>
+            <th>Rooms</th>
+          </tr>
 
+            {list}
+        </tbody>
       </table>
 
     </div>

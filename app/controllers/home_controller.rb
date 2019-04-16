@@ -19,6 +19,7 @@ class HomeController < ApplicationController
   end
 
   def delete
+    binding.pry
     @home = Home.find_by(id: params[:_json])
     @home.destroy
     @homes = Home.all
@@ -26,7 +27,7 @@ class HomeController < ApplicationController
   end
 
   def rooms
-  
+
     @house = Home.find_by(:id => params[:id])
     @rooms = @house.rooms
 

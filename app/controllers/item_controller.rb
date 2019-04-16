@@ -24,7 +24,7 @@ class ItemController < ApplicationController
   end
 
   def destroy
-    #binding.pry
+    binding.pry
     @item = Item.find_by(id: params[:_json])
     @room = Room.find_by(id: @item.room_id)
     @item.destroy

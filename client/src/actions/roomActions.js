@@ -9,7 +9,7 @@ export function getRoomsSuccess(rooms, houses){
 export function removeRoomSuccess(rooms){
   return {type: "REMOVE_ROOM_SUCCESS", rooms}
 }
-
+// ----- fetch functions -----
 async function postRoom(data){
   const url = '/api/room.json';
   const settings = {
@@ -30,11 +30,29 @@ async function getRooms(id){
 console.log("getrooms")
   const url = `/api/home/${id}/rooms.json`
   const fetchResult = fetch(url);
+  console.log("getrooms 2")
   const response = await fetchResult;
   const jsonData = await response.json();
   return jsonData;
 }
 
+async function deleteRoom(id){
+  const url = `/api/room/${id}.json`;
+  const settings = {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(id)
+}
+    const fetchResult = fetch(url, settings);
+    const response = await fetchResult;
+    const jsonData = await response.json();
+    return jsonData;
+}
+
+//----- ACtion Creators -----
 export function addRoom(data) {
   return function(dispatch) {
     return postRoom(data).then(room =>{
@@ -54,27 +72,13 @@ export function getRoom(id, houses) {
       if (rooms.status){
         alert(`Status: ${rooms.status}, ${rooms.error}`)
       }else {
+        console.log("getroom success")
         dispatch(getRoomsSuccess(rooms, houses))
       }
     })
   }
 }
 
-async function deleteRoom(id){
-  const url = `/api/room/${id}.json`;
-  const settings = {
-    method: 'DELETE',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(id)
-}
-    const fetchResult = fetch(url, settings);
-    const response = await fetchResult;
-    const jsonData = await response.json();
-    return jsonData;
-}
 
 export function removeRoom(data){
   return function(dispatch) {

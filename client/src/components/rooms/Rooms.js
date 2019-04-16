@@ -3,6 +3,7 @@ import Roomlist from './Roomlist'
 class Rooms extends Component {
 
 render() {
+  console.log("rooms")
   const {removeRoom} = this.props
   let list = []
   if(this.props.rooms){

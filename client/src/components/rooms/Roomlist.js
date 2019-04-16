@@ -7,6 +7,7 @@ class Roomlist extends Component {
     }
 
   render(){
+    console.log("roomlist")
     const {room} = this.props;
     return(
 
@@ -20,7 +21,7 @@ class Roomlist extends Component {
             <button onClick={() => this.handleOnClick(room.id)}> X </button>
           </td>
         </tr>
-      
+
     )
   }
 }

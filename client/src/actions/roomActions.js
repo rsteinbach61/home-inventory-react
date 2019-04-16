@@ -27,7 +27,7 @@ async function postRoom(data){
 }
 
 async function getRooms(id){
-
+console.log("getrooms")
   const url = `/api/home/${id}/rooms.json`
   const fetchResult = fetch(url);
   const response = await fetchResult;
@@ -48,6 +48,7 @@ export function addRoom(data) {
 }
 
 export function getRoom(id, houses) {
+  console.log("getroom")
   return function(dispatch) {
     return getRooms(id).then(rooms =>{
       if (rooms.status){

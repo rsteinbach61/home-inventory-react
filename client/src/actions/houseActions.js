@@ -13,7 +13,7 @@ export function removeHomeSuccess(homes){
 }
 
 
-
+//----- fetch functions -----
 async function fetchHomes() {
   const url = '/api/home.json';
   const fetchResult = fetch(url);
@@ -23,7 +23,7 @@ async function fetchHomes() {
 }
 
 async function postHome(data){
-  
+
   const url = '/api/create.json';
   const settings = {
     method: 'POST',
@@ -59,7 +59,7 @@ async function deleteHome(data){
 }
 
 
-
+//----- Action creators ------
 export function loadHouses() {
   return function(dispatch) {
     return fetchHomes().then(homes => {

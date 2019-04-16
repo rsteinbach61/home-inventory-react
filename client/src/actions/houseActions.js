@@ -23,8 +23,7 @@ async function fetchHomes() {
 }
 
 async function postHome(data){
-
-  const url = '/api/create.json';
+  const url = '/api/home.json';
   const settings = {
     method: 'POST',
     headers: {
@@ -40,15 +39,15 @@ async function postHome(data){
 
 }
 
-async function deleteHome(data){
-  const url = '/api/delete.json';
+async function deleteHome(id){
+  const url = `/api/home/${id}.json`;
   const settings = {
-    method: 'POST',
+    method: 'DELETE',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(id)
 }
     const fetchResult = fetch(url, settings);
     const response = await fetchResult;

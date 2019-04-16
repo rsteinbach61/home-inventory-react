@@ -17,7 +17,7 @@ class HomeController < ApplicationController
     render json:@home
   end
 
-  def delete
+  def destroy
     @home = Home.find_by(id: params[:_json])
     @home.destroy
     @homes = Home.all

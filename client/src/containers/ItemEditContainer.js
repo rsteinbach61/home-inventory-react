@@ -3,11 +3,12 @@ import { getSingleItem} from '../actions/itemActions';
 import { addItem } from '../actions/itemActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Item from '../components/items/Item'
+import ItemEdit from '../components/items/ItemEdit'
 
-class ItemContainer extends Component {
+class ItemEditContainer extends Component {
 
    componentDidMount() {
+
      this.props.getSingleItem(this.props.match.params.id)
    }
 
@@ -16,7 +17,7 @@ render(){
 
   return(
     <div>
-      <Item item={this.props.item} addItem={this.props.addItem}/>
+      <ItemEdit item={this.props.item} addItem={this.props.addItem}/>
     </div>
 
   )
@@ -40,4 +41,4 @@ const mapStateToProps = state => (
     }
   }
 
-export default connect(mapStateToProps, mapDispatchToProps ) (ItemContainer)
+export default connect(mapStateToProps, mapDispatchToProps ) (ItemEditContainer)

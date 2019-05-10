@@ -11,7 +11,9 @@ class Homes extends Component {
       return(
         <Homelist key={house.id}
           home={house}
-          deleteHome={deleteHome}/>
+          deleteHome={deleteHome}
+          like={0}
+          />
       )
     })
     return(

@@ -72,15 +72,18 @@ export function loadHouses() {
 }
 
 export function addHome(data) {
+  console.log('C')
   return function(dispatch) {
     return postHome(data).then(home =>{
       if (home.status){
           alert(`Status: ${home.status}, ${home.error}`)
     } else {
       dispatch(postHomeSuccess(home))
+      console.log('D')
     }
     })
   }
+
 }
 
 export function removeHome(data){

@@ -14,8 +14,10 @@ class HomeInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log('A')
     this.props.addHome(this.state)
     this.setState({ homename: ''})
+    console.log('B')
   }
 
   handleChange(event) {

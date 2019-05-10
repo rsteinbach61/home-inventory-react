@@ -44,8 +44,8 @@ class Item extends Component {
               pathname: `/item/${this.props.item.id}/edit`,
               state: {
                       name: this.props.item.name,
-                      make: this.props.item.make
-
+                      make: this.props.item.make,
+                    //  addItem : this.props.addItem
                       }
             }}>Edit Item</Link>
       </div>

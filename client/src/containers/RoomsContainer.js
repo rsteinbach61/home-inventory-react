@@ -29,7 +29,8 @@ render(){
 }
 
 const mapStateToProps = state => (
-  {houses: state.homes.houses, rooms: state.homes.rooms}
-)
 
+  {houses: state.homes.houses, rooms: state.homes.rooms}
+
+)
 export default connect(mapStateToProps, {getRoom, addRoom,removeRoom} ) (RoomsContainer)

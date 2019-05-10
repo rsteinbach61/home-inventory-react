@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 class Homelist extends Component {
 
+// sets initial count value to zero in local state
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+//increment the vote count by one using local state
+  upVote = () => {
+    this.setState({
+      count: this.state.count + 1
+    })
+
+
+  }
+
   handleOnClick(id){
       this.props.deleteHome(id)
     }
@@ -18,6 +34,12 @@ class Homelist extends Component {
         </td>
           <td>
           <button onClick={() => this.handleOnClick(home.id)}> X </button>
+          </td>
+          <td>
+          <button onClick={this.upVote}> Up Vote </button>
+          </td>
+          <td>
+           {this.state.count}
           </td>
         </tr>
       //</div>

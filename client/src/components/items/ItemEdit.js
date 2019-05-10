@@ -3,10 +3,11 @@ import React, { Component} from 'react';
 
 class ItemEdit extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    debugger;
     this.state = {
-      name: '',
+      name: props.item.name || '',
       user_id: 100,
       make: '',
       model: '',
@@ -14,28 +15,31 @@ class ItemEdit extends Component {
       purchase_date: "",
       serial_num: '',
       purchase_price: "",
-      room_id: "",
+      item_id: "",
     };
   }
 
   handleChange(event) {
+//debugger;
     let state = this.state
     let field = event.target.name
     state[field] = event.target.value
-    state.room_id = this.props.roomId
+    state.item_id = this.props.item.id
+
     this.setState(state)
   }
 
   handleSubmit = event => {
 
     event.preventDefault();
+
     this.props.addItem(this.state)
     this.setState({itemname: ''})
   }
 
   render(){
 
-
+console.log("B")
     return(
       <div>
 
@@ -43,11 +47,14 @@ class ItemEdit extends Component {
           <legend>Edit Item</legend>
 
         <p>
-          <label for="name">Name <input type="text" id="name" name="name"         onChange={(event) =>this.handleChange(event)} value={this.props.location.state.name}/></label>
+          <label for="name">Name <input type="text" id="name" name="name"  onChange={(event) =>this.handleChange(event)} value={this.state.name}/></label>
         </p>
 
 
           <br></br>
+
+
+
 
           <input type="submit" className="button"/>
           </form>
@@ -87,3 +94,6 @@ this.handleChange(event)} value={this.state.purchase_price}/></label>
 <label for="purchase_date">Purchase Date <input type="text" id="purchase_date" name="purchase_date" onChange={(event) =>
 this.handleChange(event)} value={this.state.purchase_date}/></label>
 </p> */
+
+//this.props.location.state.name
+//this.props.item.name

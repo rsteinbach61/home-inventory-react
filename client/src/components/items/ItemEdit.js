@@ -5,7 +5,6 @@ class ItemEdit extends Component {
 
   constructor(props) {
     super(props);
-    debugger;
     this.state = {
       name: props.item.name || '',
       user_id: 100,
@@ -33,7 +32,7 @@ class ItemEdit extends Component {
 
     event.preventDefault();
 
-    this.props.addItem(this.state)
+    this.props.updateItem(this.state)
     this.setState({itemname: ''})
   }
 

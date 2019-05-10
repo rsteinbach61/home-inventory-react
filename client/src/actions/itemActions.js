@@ -14,6 +14,10 @@ export function deleteItemSuccess(items){
   return {type: "DELETE_ITEM_SUCCESS", items}
 }
 
+export function patchItemSuccess(items){
+  return {type: "PATCH_ITEM_SUCCESS", items}
+}
+
 // ----- fetch functions -----
  async function postItem(data){
    const url = '/api/item.json';
@@ -112,4 +116,34 @@ export function addItem(data){
       }
     })
 }
+}
+
+export function updateItem(id){
+  return function(dispatch){
+    return patchItem(id).then(item =>{
+      if (item.status){
+        alert(`Status: ${item.status}, ${item.error}`)
+      } else {
+        dispatch(patchItemSuccess(item))
+      }
+    })
+  }
+}
+
+
+async function patchItem(data){
+  debugger;
+  const url = `/api/item/${data.item_id}.json;`
+  const settings = {
+    method: 'PATCH',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+}
+const fetchResult = fetch(url, settings);
+const response = await fetchResult;
+const jsonData = await response.json();
+return jsonData;
 }

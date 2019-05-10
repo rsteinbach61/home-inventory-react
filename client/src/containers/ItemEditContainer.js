@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getSingleItem} from '../actions/itemActions';
-import { addItem } from '../actions/itemActions';
+import { updateItem } from '../actions/itemActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ItemEdit from '../components/items/ItemEdit'
@@ -17,7 +17,7 @@ render(){
 
   return(
     <div>
-      <ItemEdit item={this.props.item} addItem={this.props.addItem}/>
+      <ItemEdit item={this.props.item} updateItem={this.props.updateItem}/>
     </div>
 
   )
@@ -37,7 +37,7 @@ const mapStateToProps = state => (
   function mapDispatchToProps(dispatch) {
     return {
       dispatch,
-      ...bindActionCreators({getSingleItem, addItem}, dispatch)
+      ...bindActionCreators({getSingleItem, updateItem}, dispatch)
     }
   }
 

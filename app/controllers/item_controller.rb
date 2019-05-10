@@ -15,10 +15,12 @@ class ItemController < ApplicationController
     render json: @item
   end
 
+  def edit
+  end
+
   def update
-    @item = Item.find_by(id: params[:_json])
-    @item = Item.update(item_params)
-    @item.save
+    @item = Item.find_by(id: params[:id])
+    @item.update(item_params)
     render json: @item
   end
 

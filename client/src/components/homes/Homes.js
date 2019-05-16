@@ -16,6 +16,7 @@ class Homes extends Component {
           />
       )
     })
+  
     return(
       <div>
 
